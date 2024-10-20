@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'BeCool';
+    src: url('./fonts/iCielBeCool-Regular.otf') format('opentype'); /* Nếu là .otf */
+    /* src: url('/fonts/custom-font.ttf') format('truetype'); Nếu là .ttf */
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, user-scalable=no">
+    <title>💖💖❤️‍🔥🔥</title>
+    <link rel="shortcut icon" href="./src/images/yeu.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"./>
+    <link rel="stylesheet" href="./src/preload.css">
+
+</head>
+<body class="h-screen select-none w-screen bg-[url('/src/images/PTIT.jpg')] bg-cover bg-center flex justify-center overflow-hidden">
+    
+    <div class="preload z-40 h-screen w-screen">
+        <div class="back"></div>
+        <div class="heart"></div>
+    </div>
+    
+    <div id="cover" class="absolute z-30 container p-2 max-w-[450px] mx-auto h-screen">
+        <!-- <div class="h-full w-full bg-[#402c70] p-5 relative">
+            <div class=" h-full w-full bg-gradient-to-b from-[#ffecf0] to-[#ffd5ff]"></div>
+        </div> -->
+        <div class="relative h-full w-full">
+            <img class="relative max-w-[80%] top-12 left-[10%] animate__animated animate__pulse animate__infinite" style="animation-duration: 5s;" src="./src/images/text.png" alt="" srcset="">
+            <div class="">
+                <div class="relative z-30 cursor-pointer top-20 flex justify-center animate__animated animate__pulse animate__infinite" onclick="openLetters()">
+                    <span class="font-BeCool bg-[#C96FB6] px-6 pt-2 pb-1 rounded-xl text-white text-xl border-[2px] border-[#402C70] border-solid">Bấm vào đây nè</span>
+                </div>
+            </div>
+            <img class="absolute z-10 max-w-[90%] max-h-[60%] bottom-[-8px] left-[5%] animate__animated animate__pulse animate__infinite" style="animation-duration: 6s;" src="./src/images/woman.png" alt="" srcset="./src/images/woman.png">
+            
+        </div>
+    </div>
+
+    <div id="content" class="container hidden z-10 overflow-hidden max-w-[450px] mx-auto h-screen bg-cover bg-center absolute">
+        <div class="relative h-full w-full p-12 z-20 flex flex-col justify-between">
+            <div class="">
+                <p class="font-BeCool text-center text-base text-[#F3778E] animate__animated animate__pulse animate__infinite" style="animation-duration: 3s;">
+                    From Dang Duong w/ 💖
+                </p>
+            </div>
+            <div class="" id="wrap-letters">
+                <!-- <div class="relative shadow-xl p-6 pt-8 font-BeCool bg-[url('/src/images/paper.jpg')] bg-cover bg-center w-full z-20 flex flex-col gap-3 rounded-xl">
+                    <p class="block">
+                        <span class="text-[#402C70] text-base">to: </span>
+                        <span class="text-[#F3778E] text-xl">Trương Đăng Dương</span>
+                    </p>
+    
+                    <p class="block mt-4 text-[#402C70] text-xl">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam corrupti nostrum ex tempore similique maxime ducimus officiis ullam, corporis commodi delectus aspernatur labore dicta vitae, quis cum unde sint harum? 
+                    </p>
+    
+                    <p class="block mt-4"></p>
+                        <span class="text-[#402C70] text-base">from: </span>
+                        <span class="text-[#F3778E] text-xl">Trương Đăng Dương</span>
+                    </p>
+    
+                </div> -->
+            </div>
+            <div class="flex flex-row justify-between pb-10">
+                <div id="btn-back" class="opacity-0 cursor-pointer h-14 w-14 flex justify-center items-center bg-[#FFEBF6] rounded-lg" onclick="backLetters()">
+                    <svg class="text-[#F3778E] h-10 w-10 text-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8.36853 12L13.1162 3.03212L14.8838 3.9679L10.6315 12L14.8838 20.0321L13.1162 20.9679L8.36853 12Z"></path></svg>
+                </div>
+                <div class="flex justify-center items-center">
+                    <span id="text-current-letter" class="text-lg font-BeCool text-[#402C70]">2/10</span>
+                </div>
+                <div id="btn-next" class="h-14 cursor-pointer w-14 flex justify-center items-center bg-[#FFEBF6] rounded-lg" onclick="nextLetters()">
+                    <svg class="text-[#F3778E] h-10 w-10 text-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.6315 12L10.8838 3.03212L9.11622 3.9679L13.3685 12L9.11622 20.0321L10.8838 20.9679L15.6315 12Z"></path></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="./data/Hang.js"></script>
+
+<script>
+
+console.log({
+  'Author': "Truong Dang Duong",
+  'Facebook': "https://www.facebook.com/duongdzin/",
+  'Github': "https://github.com/dangduongcoder",
+  'Release': "17/10/2024",
+});
+
+console.log(
+  "%cTRUONG DANG DUONG",
+  "color: yellow; font-size: 35px; background-color: red;padding: 10px"
+);
+
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const preloadElement = document.querySelector('.preload');
+
+        preloadElement.classList.add('animate__animated', 'animate__fadeOut');
+
+        preloadElement.addEventListener('animationend', function() {
+            preloadElement.style.display = 'none';
+        });
+    }, 3000); 
+});
+
+var wrapperLetters = document.getElementById('wrap-letters')
+var textCurrentLetters = document.getElementById('text-current-letter')
+var btnBack = document.getElementById('btn-back')
+var btnNext = document.getElementById('btn-next')
+var cover = document.getElementById('cover')
+var content = document.getElementById('content')
+
+
+var i = 0;
+var currentActiveLetters = 0;
+
+textCurrentLetters.innerText = `${currentActiveLetters + 1}/${letters.length}`
+
+letters.forEach(letter => {
+    wrapperLetters.innerHTML += `
+        <div class="letters transition transition-all duration-200 relative ${i != 0 ? "hidden" : ""} shadow-xl p-6 pt-8 font-BeCool bg-[url('/src/images/paper.jpg')] bg-cover bg-center w-full z-20 flex flex-col gap-3 rounded-xl">
+            <div class="absolute h-8 w-8 cursor-pointer right-4 top-4 text-[#FFA6D7]" onclick="closeLetters()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
+            </div>
+
+            <p class="block ${letter.hasHeader ? '' : 'hidden'}">
+                <span class="text-[#402C70] text-base">to: </span><br>
+                <span class="text-[#F3778E] text-xl">${configs.owner}</span>
+            </p>
+
+            <p class="block mt-4 text-[#402C70] text-xl">
+                ${letter.content}
+            </p>
+
+            <p class="block mt-4  ${letter.hasFooter ? '' : 'hidden'}">
+                <span class="text-[#402C70] text-base">from: </span>
+                <span class="text-[#F3778E] text-xl">${letter.from}</span>
+            </p>
+
+        </div>
+    `
+    i ++
+});
+
+var lettersEl = document.getElementsByClassName('letters')
+
+function changeActiveLetters(index) {
+    const currentLetterEl = lettersEl[currentActiveLetters];
+    const nextLetterEl = lettersEl[index];
+
+    currentLetterEl.classList.add('animate__animated', 'animate__fadeOut');
+
+    currentLetterEl.addEventListener('animationend', function onFadeOut() {
+        currentLetterEl.removeEventListener('animationend', onFadeOut);
+        currentLetterEl.classList.add('hidden');
+        currentLetterEl.classList.remove('animate__animated', 'animate__fadeOut');
+        
+        currentActiveLetters = index;
+        textCurrentLetters.innerText = `${currentActiveLetters + 1}/${letters.length}`;
+
+        nextLetterEl.classList.remove('hidden');
+        nextLetterEl.classList.add('animate__animated', 'animate__fadeIn');
+    });
+
+    if(currentActiveLetters == letters.length - 1) {
+        btnNext.classList.add('opacity-0');
+    } else {
+        btnNext.classList.remove('opacity-0');
+    }
+
+    if(currentActiveLetters == 0) {
+        btnBack.classList.add('opacity-0');
+    } else {
+        btnBack.classList.remove('opacity-0');
+    }
+}
+
+function openLetters() {
+    cover.classList.add('animate__animated', 'animate__fadeOut');
+
+    cover.addEventListener('animationend', function onFadeOut() {
+        cover.removeEventListener('animationend', onFadeOut); 
+        cover.classList.add('hidden'); 
+        cover.classList.remove('animate__animated', 'animate__fadeOut');
+
+        content.classList.remove('hidden');
+        content.classList.add('animate__animated', 'animate__fadeIn');
+    });
+}
+
+function closeLetters() {
+    content.classList.add('animate__animated', 'animate__fadeOut');
+
+    content.addEventListener('animationend', function onFadeOut() {
+        content.removeEventListener('animationend', onFadeOut); 
+        content.classList.add('hidden'); 
+        content.classList.remove('animate__animated', 'animate__fadeOut');
+
+        cover.classList.remove('hidden');
+        cover.classList.add('animate__animated', 'animate__fadeIn');
+    });
+}
+
+function nextLetters() {
+    if (currentActiveLetters + 1 < letters.length) {
+        changeActiveLetters(currentActiveLetters + 1)
+    }
+}
+
+function backLetters() {
+    if (currentActiveLetters - 1 >= 0) {
+        changeActiveLetters(currentActiveLetters - 1)
+    }
+}
+
+
+
+document.addEventListener('gesturestart', function(e) {
+    e.preventDefault(); 
+});
+
+document.addEventListener('touchstart', function(e) {
+    if (e.touches.length > 1) {
+        e.preventDefault(); 
+    }
+}, { passive: false });
+
+
+window.scrollTo(0,1)
+
+
+</script>
+
+
+</html>
