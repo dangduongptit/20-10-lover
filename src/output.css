@@ -657,10 +657,6 @@ video {
   display: flex;
 }
 
-.table {
-  display: table;
-}
-
 .hidden {
   display: none;
 }
@@ -795,8 +791,8 @@ video {
   background-color: rgb(255 235 246 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/src\/images\/PTIT\.jpg\'\)\] {
-  background-image: url('/src/images/PTIT.jpg');
+.bg-\[url\(\'\.\/src\/images\/PTIT\.jpg\'\)\] {
+  background-image: url('./src/images/PTIT.jpg');
 }
 
 .bg-\[url\(\'\/src\/images\/paper\.jpg\'\)\] {
