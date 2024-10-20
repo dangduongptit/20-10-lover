@@ -803,6 +803,10 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\.\/images\/PTIT\.jpg\'\)\] {
+  background-image: url('./images/PTIT.jpg');
+}
+
 .from-\[\#ffecf0\] {
   --tw-gradient-from: #ffecf0 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 236 240 / 0) var(--tw-gradient-to-position);
